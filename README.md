@@ -7,7 +7,7 @@
 #### Gerar certificado CA
 
 ```
-openssl req -x509 -sha384 -days 1825 -nodes -newkey rsa:4096 -subj "/CN=mynetwork/C=BR/L=Sao Paulo" -keyout CA-private.key óut CA-public.crt
+openssl req -x509 -sha384 -days 1825 -nodes -newkey rsa:4096 -subj "/CN=mynetwork/C=BR/L=Sao Paulo" -keyout CA-private.key -out CA-public.crt
 ```
 #### Gerar chave privada 
 ```
