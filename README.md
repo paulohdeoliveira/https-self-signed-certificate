@@ -51,7 +51,7 @@ sudo ln -s .../conf-available/20-https /etc/lighttpd/conf-enabled/20-https.conf
 
 #### Instalar pacote
 ```
-sudo apt install lighttpd_mod_openssl
+sudo apt install lighttpd-mod-openssl
 ```
 
 #### Reiniciar lighttpd
