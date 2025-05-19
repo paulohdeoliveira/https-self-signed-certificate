@@ -34,6 +34,10 @@ sudo cp pihole-combined.pem /etc/pihole/
 ```
 
 #### Configurar Certificado no NGINX ####
+
+>[!NOTE]
+> Criar pasta /etc/nginx/certs/
+
 ```
 server {
     listen 443 ssl http2;
