@@ -32,28 +32,3 @@ cat pihole-private.key pihole-public.crt | tee pihole-combined.pem
 ```
 sudo cp pihole-combined.pem /etc/pihole/
 ```
-
-#### Configurar Certificado no NGINX ####
-
->[!NOTE]
-> Criar pasta /etc/nginx/certs/
-
-```
-server {
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
-    server_name domain_name;
-    ssl_certificate /etc/nginx/certs/ssl_certificate.crt;
-    ssl_certificate_key /etc/nginx/certs/ssl_certificate.key;
-    ssl_protocols TLSv1.3;
-
-    location / {
-        proxy_pass http://localhost:9392;
-
-        proxy_set_header        Host $host;
-        proxy_set_header        X-Real-IP $remote_addr;
-        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header        X-Forwarded-Proto $scheme;
-    }
-}
-```
